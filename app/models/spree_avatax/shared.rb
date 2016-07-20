@@ -29,6 +29,7 @@ module SpreeAvatax::Shared
     end
 
     def get_tax(params)
+      logger.info("get_tax: #{params.inspect}")
       call_tax_svc_with_timeout(:gettax, params)
     end
 
