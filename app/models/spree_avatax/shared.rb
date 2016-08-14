@@ -30,15 +30,15 @@ module SpreeAvatax::Shared
 
     def get_tax(params)
       logger.info("get_tax: #{params.inspect}")
-      call_tax_svc_with_timeout(:gettax, params)
+      # call_tax_svc_with_timeout(:gettax, params)
     end
 
     def post_tax(params)
-      call_tax_svc_with_timeout(:posttax, params)
+      #call_tax_svc_with_timeout(:posttax, params)
     end
 
     def cancel_tax(params)
-      call_tax_svc_with_timeout(:canceltax, params)
+      #call_tax_svc_with_timeout(:canceltax, params)
     end
 
     def tax_svc
