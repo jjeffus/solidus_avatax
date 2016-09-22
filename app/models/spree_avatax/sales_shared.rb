@@ -58,7 +58,7 @@ module SpreeAvatax::SalesShared
     #   {tax_line: {...}, record: #<Spree::Shipment id=111>},
     # ]
     def build_tax_line_data(order, avatax_result)
-      return
+      return []
       # Array.wrap is required because the XML engine the Avatax gem uses turns child nodes into
       #   {...} instead of [{...}] when there is only one child.
       tax_lines = Array.wrap(avatax_result[:tax_lines][:tax_line])
