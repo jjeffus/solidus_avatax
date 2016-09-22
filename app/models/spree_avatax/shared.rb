@@ -58,7 +58,11 @@ module SpreeAvatax::Shared
     end
 
     def require_success!(response)
-      if response[:result_code] == 'Success'
+
+      if response == true
+        logger.info "[avatax] response - result=success true"
+        logger.debug { "[avatax] response: #{response.to_json}" }
+      elsif response.class == Hash and response[:result_code] == 'Success'
         logger.info "[avatax] response - result=success doc_id=#{response[:doc_id]} doc_code=#{response[:doc_code]} transaction_id=#{response[:transaction_id]}"
         logger.debug { "[avatax] response: #{response.to_json}" }
       else
